@@ -5,12 +5,15 @@ async function getUserInput() {
         {
             type: 'input',
             name: 'text',
-            message: 'Enter the text for your logo',
+            message: 'Enter up to three characters for your logo text',
+            validate: function (input) {
+                return input.length <= 3 ? true : 'Pleas enter up to three characters';
+            }
         },
         {
-            type: 'list',
-            name: 'color',
-            message: 'Select a color for your logo',
+            type: 'input',
+            name: 'textColor',
+            message: 'Enter a color keyword or hexadecimal number for the text color:',
             choices: ['red', 'green', 'blue,', 'yellow', 'purple'],
         },
         {
@@ -19,13 +22,14 @@ async function getUserInput() {
             message: 'Select a shape for your logo',
             choices: ['circle', 'square', 'triangle'],
         },
+        {
+            type: 'input',
+            name: 'shapeColor',
+            message: 'Enter a color keyword or hexadecimal number for the shape color:,'
+        }
     ];
 
     return inquirer.prompt(questions);
 }
 
-function createLogo(text, color, shape) {
-
-}
-
-module.exports = {getuserInput, createLogo};
+module.exports = getUserInput;
