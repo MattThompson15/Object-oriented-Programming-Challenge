@@ -23,3 +23,11 @@ class Circle extends Shape {
         return `<circle cx="150" cy="150" r="180" fill="${this.color}" />`;
     }
 }
+
+class Square extends Shape {
+    render() {
+        return `<rect width="200" height="200" fill="${this.color}" />`;
+    }
+}
+
+module.exports = {Shape, Triangle, Circle, Square};
