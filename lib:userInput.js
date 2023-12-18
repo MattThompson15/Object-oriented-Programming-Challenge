@@ -14,7 +14,7 @@ async function getUserInput() {
             type: 'input',
             name: 'textColor',
             message: 'Enter a color keyword or hexadecimal number for the text color:',
-            choices: ['red', 'green', 'blue,', 'yellow', 'purple'],
+            choices: ['red', 'green', 'blue', 'yellow', 'purple'],
         },
         {
             type: 'list',
