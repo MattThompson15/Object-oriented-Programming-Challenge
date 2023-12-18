@@ -15,7 +15,7 @@ async function getUserInput() {
         },
         {
             type: 'list',
-            name:: 'shape',
+            name: 'shape',
             message: 'Select a shape for your logo',
             choices: ['circle', 'square', 'triangle'],
         },
