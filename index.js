@@ -1,33 +1,33 @@
-const getUserInput = import('./userInput');
-const { Triangle, Circle, Square } = import('./lib/shapes');
-const fs = import('fs');
+const getUserInput = require('./userInput');
+const { Triangle, Circle, Square } = require('./shapes');
+const fs = require('fs');
 
-async function run() {
-    try {
-        const userInput = await getUserInput();
-        const shape = getShape(userInput.shape, userInput.shapeColor);
-
-        const logoSVG = shape.renderText(userInput.text, userInput.textColor);
-        const filename = 'logo.svg';
-
-        fs.writeFileSync(filename, logoSVG);
-        console.log(`generated ${filename}`);
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-function getShape(shapeType, color) {
-    switch (shapeType) {
-        case 'circle':
-            return new Circle(color);
-        case 'square':
-            return new Square(color);
+async function generateLogo() {
+     const userInput = await getUserInput();
+    
+     let shape;
+     switch (userInput.shape) {
         case 'triangle':
-            return new Triangle(color);
+            shape = new Triangle();
+            break;
+        case 'circle':
+            shape = new Circle();
+            break;
+        case 'square':
+            shape = new Square();
+            break;
         default:
-            throw new Error('Invalid shape type');
-    }
+            console.log('Invalid shape');
+            return;
+     }
+
+     shape.setColor(userInput.shapeColor);
+
+     const svgContent = shape.render(userInput.text, userInput.textColor);
+
+     fs.writeFileSync('logo.svg', svgContent);
+     console.log('Generated logo.svg');
 }
 
-run();
+generateLogo();
+
