@@ -1,6 +1,6 @@
-const getUserInput = require('.userInput');
-const { Triangle, Circle, Square } = require('.shapes');
-const fs = require('fs');
+const getUserInput = import('./userInput');
+const { Triangle, Circle, Square } = import('./shapes');
+const fs = import('fs');
 
 async function run() {
     try {

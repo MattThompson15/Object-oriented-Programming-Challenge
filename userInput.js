@@ -7,13 +7,14 @@ async function getUserInput() {
             name: 'text',
             message: 'Enter up to three characters for your logo text',
             validate: function (input) {
-                return input.length <= 3 ? true : 'Pleas enter up to three characters';
+                return input.length <= 3 ? true : 'Please enter up to three characters';
             }
         },
         {
             type: 'input',
             name: 'textColor',
             message: 'Enter a color keyword or hexadecimal number for the text color:',
+            type: 'list',
             choices: ['red', 'green', 'blue', 'yellow', 'purple'],
         },
         {
@@ -25,7 +26,7 @@ async function getUserInput() {
         {
             type: 'input',
             name: 'shapeColor',
-            message: 'Enter a color keyword or hexadecimal number for the shape color:,'
+            message: 'Enter a color keyword or hexadecimal number for the shape color:'
         }
     ];
 
