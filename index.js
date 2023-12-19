@@ -1,4 +1,4 @@
-const { getuserInput, createLogo} = require('.lib/user/input');
+const { getuserInput, createLogo} = require('./lib/user/input');
 
 async function run() {
     const userInput = await getuserInput();
