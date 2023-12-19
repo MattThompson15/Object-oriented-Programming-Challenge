@@ -1,5 +1,5 @@
 const getUserInput = import('./userInput');
-const { Triangle, Circle, Square } = import('./shapes');
+const { Triangle, Circle, Square } = import('./lib/shapes');
 const fs = import('fs');
 
 async function run() {
