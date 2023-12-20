@@ -1,13 +1,10 @@
-import getUserInput from './lib/userInput.js';
-import { Triangle, Circle, Square }
-from './lib/shapes.js';
-import fs from 'fs';
-
+const getUserInput = require('./lib/userInput.js');
+const { Triangle, Circle, Square } = require('./lib/shapes');
+const fs = require('fs');
 async function generateLogo() {
-     const userInput = await getUserInput();
-    
-     let shape;
-     switch (userInput.shape) {
+    const userInput = await getUserInput();
+    let shape;
+    switch (userInput.shape) {
         case 'triangle':
             shape = new Triangle();
             break;
@@ -30,5 +27,7 @@ async function generateLogo() {
      console.log('Generated logo.svg');
 }
 
-generateLogo();
+    generateLogo();
+
+
 
