@@ -4,16 +4,17 @@
   "description": "SVG app",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Matt Thompson",
   "license": "MIT",
+  "Dependencies": {
+    "inquirer": "^9.2.12"
+  },
   "devDependencies": {
-    "-": "^0.0.1",
-    "@babel/preset-env": "7.23.6",
-    "babel-jest": "^29.7.0",
-    "inquirer": "^9.2.12",
+    "esm": "^3.2.25",
     "jest": "^29.7.0"
   }
 }

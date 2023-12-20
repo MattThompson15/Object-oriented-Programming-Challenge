@@ -1,6 +1,6 @@
-const getUserInput = require('./lib/userInput.js');
-const { Triangle, Circle, Square } = require('./lib/shapes');
-const fs = require('fs');
+import getUserInput from '../lib/userInput.js';
+import { Triangle, Circle, Square } from '../lib/shapes';
+
 async function generateLogo() {
     const userInput = await getUserInput();
     let shape;
