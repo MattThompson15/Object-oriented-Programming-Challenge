@@ -1,6 +1,9 @@
+//This file is the entry point of the application
+//Importing necessary modules or dependencies
 import getUserInput from '../lib/userInput.js';
 import { Triangle, Circle, Square } from '../lib/shapes';
 
+//Function to generate the logo based on user input
 async function generateLogo() {
     const userInput = await getUserInput();
     let shape;
@@ -26,8 +29,8 @@ async function generateLogo() {
      fs.writeFileSync('logo.svg', svgContent);
      console.log('Generated logo.svg');
 }
-
-    generateLogo();
+//Invoking the generateLogo function
+generateLogo();
 
 
 
